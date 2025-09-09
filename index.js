@@ -36,6 +36,14 @@ app.get('/api/status', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+    res.send(`
+        <h2>📡 Discord Status API</h2>
+        <p>Используй: <code>/api/status</code></p>
+        <p>Статус: <strong>${currentStatus}</strong></p>
+    `);
+});
+
 app.listen(PORT, () => {
     console.log(`📡 API запущен на порту ${PORT}`);
 });
